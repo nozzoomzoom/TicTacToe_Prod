@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ActionBar title="Bienvenue" class="bg-blue-500 text-white" />
+    <StackLayout class="p-4">
+        <Label text="Entrez les noms des joueurs" class="text-2xl text-center mb-4" textWrap="true"/>
+        
+        <Label text="Joueur X:" class="text-lg ml-2"/>
+        <TextField text="{{ playerXName }}" hint="Entrez le nom du joueur X" class="input p-4 m-2"/>
+        
+        <Label text="Joueur O:" class="text-lg ml-2"/>
+        <TextField text="{{ playerOName }}" hint="Entrez le nom du joueur O" class="input p-4 m-2"/>
+        
+        <Button text="Commencer la partie" tap="onStartGame" class="btn-primary m-4"/>
+    </StackLayout>
+</Page>

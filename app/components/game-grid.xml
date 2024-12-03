@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridLayout xmlns="http://schemas.nativescript.org/tns.xsd"
+            rows="*, *, *"
+            columns="*, *, *">
+    <Repeater items="{{ cells }}" row="0" colSpan="3">
+        <Repeater.itemTemplate>
+            <Button text="{{ value }}"
+                    tap="{{ $parent.onCellTap, row: row, col: col }}"
+                    row="{{ row }}"
+                    col="{{ col }}"
+                    class="{{ value ? 'btn-cell-filled' : 'btn-cell' }}" />
+        </Repeater.itemTemplate>
+    </Repeater>
+</GridLayout>

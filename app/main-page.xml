@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ActionBar title="Tic Tac Toe" class="bg-blue-500 text-white" />
+    <GridLayout rows="auto, auto, *, auto">
+        <Label row="0" text="{{ status }}" class="text-xl text-center p-2" textWrap="true"/>
+        
+        <GridLayout row="1" columns="*, *, *" class="stats-container">
+            <Label col="0" text="{{ playerXName + ': ' + stats.playerXWins }}" class="text-center" textWrap="true"/>
+            <Label col="1" text="{{ 'Nuls: ' + stats.draws }}" class="text-center" textWrap="true"/>
+            <Label col="2" text="{{ playerOName + ': ' + stats.playerOWins }}" class="text-center" textWrap="true"/>
+        </GridLayout>
+        
+        <GridLayout row="2" rows="*, *, *" columns="*, *, *" class="m-2">
+            <Button row="0" col="0" text="{{ board[0][0] }}" tap="onCellTap" class="{{ board[0][0] === 'X' ? (isCellWinner(0,0) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[0][0] === 'O' ? (isCellWinner(0,0) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="0" data-col="0" />
+            <Button row="0" col="1" text="{{ board[0][1] }}" tap="onCellTap" class="{{ board[0][1] === 'X' ? (isCellWinner(0,1) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[0][1] === 'O' ? (isCellWinner(0,1) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="0" data-col="1" />
+            <Button row="0" col="2" text="{{ board[0][2] }}" tap="onCellTap" class="{{ board[0][2] === 'X' ? (isCellWinner(0,2) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[0][2] === 'O' ? (isCellWinner(0,2) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="0" data-col="2" />
+            <Button row="1" col="0" text="{{ board[1][0] }}" tap="onCellTap" class="{{ board[1][0] === 'X' ? (isCellWinner(1,0) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[1][0] === 'O' ? (isCellWinner(1,0) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="1" data-col="0" />
+            <Button row="1" col="1" text="{{ board[1][1] }}" tap="onCellTap" class="{{ board[1][1] === 'X' ? (isCellWinner(1,1) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[1][1] === 'O' ? (isCellWinner(1,1) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="1" data-col="1" />
+            <Button row="1" col="2" text="{{ board[1][2] }}" tap="onCellTap" class="{{ board[1][2] === 'X' ? (isCellWinner(1,2) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[1][2] === 'O' ? (isCellWinner(1,2) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="1" data-col="2" />
+            <Button row="2" col="0" text="{{ board[2][0] }}" tap="onCellTap" class="{{ board[2][0] === 'X' ? (isCellWinner(2,0) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[2][0] === 'O' ? (isCellWinner(2,0) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="2" data-col="0" />
+            <Button row="2" col="1" text="{{ board[2][1] }}" tap="onCellTap" class="{{ board[2][1] === 'X' ? (isCellWinner(2,1) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[2][1] === 'O' ? (isCellWinner(2,1) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="2" data-col="1" />
+            <Button row="2" col="2" text="{{ board[2][2] }}" tap="onCellTap" class="{{ board[2][2] === 'X' ? (isCellWinner(2,2) ? 'btn-cell-winner-x' : 'btn-cell-x') : (board[2][2] === 'O' ? (isCellWinner(2,2) ? 'btn-cell-winner-o' : 'btn-cell-o') : 'btn-cell') }}" data-row="2" data-col="2" />
+        </GridLayout>
+
+        <GridLayout row="3" columns="*, *, *" class="m-2">
+            <Button col="0" text="Nouvelle" tap="onResetGame" class="btn-primary"/>
+            <Button col="1" text="Scores" tap="onResetStats" class="btn-primary"/>
+            <Button col="2" text="Joueurs" tap="onResetPlayers" class="btn-primary"/>
+        </GridLayout>
+    </GridLayout>
+</Page>
